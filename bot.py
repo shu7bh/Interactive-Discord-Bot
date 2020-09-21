@@ -33,5 +33,4 @@ async def clear(ctx, amt = 10):
 async def selfidentify(ctx, *, name):
     await ctx.send(f'{ctx.author}, you are identified as {name}')
     
-#bot.run('NzU3NTc0NzU1Nzc4ODIyMjI0.X2iYeA.pWRFWr4cOfSECKKlzlaUJa47-EE')
 bot.run(open('token.txt', 'r').readline())
