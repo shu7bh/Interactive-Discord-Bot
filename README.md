@@ -16,7 +16,7 @@ To run this bot in your server, do the following:
 You have to run the bot.py in your machine.
 After you have gone through the prerequisites, you can now run this bot
 
-To run this type the following in the command line in the cloned directory '$python3 bot.py'
+To run this type the following in the command line in the cloned directory `$python3 bot.py`
 If no errors have occured, the bot should start functioning
 
 To run this file in your terminal in the background do the following:
