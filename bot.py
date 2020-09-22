@@ -3,7 +3,7 @@ from discord.ext import commands
 import random
 import os
 
-bot = commands.Bot(command_prefix = '.')
+bot = commands.Bot(command_prefix = '!')
 
 def checkName(author):
     'Returns true if the name is already present in the list, else returns false'
@@ -52,6 +52,9 @@ def removeName(userId):
     return "your identity doesn't exist"
 
 
+def reidentify(_id,name):
+    removeName(_id)
+    selfIdentify(_id,name)
 
 def reidentify(_id,name):
     removeName(_id)
