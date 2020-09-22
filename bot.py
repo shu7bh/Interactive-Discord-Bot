@@ -3,7 +3,7 @@ from discord.ext import commands
 import random
 import os
 
-bot = commands.Bot(command_prefix = '.')
+bot = commands.Bot(command_prefix = '!')
 
 def checkName(author):
     'Returns true if the name is already present in the list, else returns false'
@@ -54,6 +54,9 @@ def removeName(userId):
     return "your identity doesn't exist"
 
 
+def reidentify(_id,name):
+    removeName(_id)
+    selfIdentify(_id,name)
 
 @bot.event
 async def on_ready():
@@ -103,8 +106,9 @@ async def selfidentify(ctx, *, name):
     'You can add your identity from here'
 
     author = ctx.author
-    if (checkName(author)):
-        await ctx.send(f'{author} your current identity is {findName(author)}To change your identity, remove your current identity and try again')
+    if checkName(author):
+        reidentify(author.id, name)
+        await ctx.send(f'{author} your identity has been updated to {name}')
         return
     
     selfIdentify(author.id ,name)
@@ -134,4 +138,5 @@ async def removeidentity(ctx):
 #     'To self identify a person'
 #     await ctx.send(f'{ctx.author}, you are identified as {name}')
 #
-bot.run(open('token.txt', 'r').readline())
+bot.run("NzU3NDk0Njg4NDI4MzI3MDIz.X2hN5w.0GcvmOSH51l2nHKIrTADZdXz3Fs")
+#bot.run(open('token.txt', 'r').readline())
