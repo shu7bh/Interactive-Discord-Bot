@@ -138,5 +138,5 @@ async def removeidentity(ctx):
 #     'To self identify a person'
 #     await ctx.send(f'{ctx.author}, you are identified as {name}')
 #
-bot.run("NzU3NDk0Njg4NDI4MzI3MDIz.X2hN5w.0GcvmOSH51l2nHKIrTADZdXz3Fs")
-#bot.run(open('token.txt', 'r').readline())
+
+bot.run(open('token.txt', 'r').readline())
