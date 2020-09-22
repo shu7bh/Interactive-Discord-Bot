@@ -56,11 +56,6 @@ def reidentify(_id,name):
     removeName(_id)
     selfIdentify(_id,name)
 
-def reidentify(_id,name):
-    removeName(_id)
-    selfIdentify(_id,name)
-
-
 @bot.event
 async def on_ready():
     'Just to show that the bot is online and functioning'
