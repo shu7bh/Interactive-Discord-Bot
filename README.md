@@ -32,9 +32,10 @@ $nohup python3 bot.py > log.out 2> log.err &
 To kill this program, you have to first identify the pid of your program.
 To do this, type `$pidof python3 bot.py`
 
-The first number <pid> is generally the one that has to be killed by you to stop the execution of the program.
+The first number `<pid>` is generally the one that has to be killed by you to stop the execution of the program.
 
 Kill it using the folliwng command: `kill <pid>`
+
 Here `log.out` will contain the stdout while `log.err` will contain the error messages received by the bot
 
 ## Add the Bot on your server ###
