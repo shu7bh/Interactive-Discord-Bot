@@ -1,4 +1,4 @@
 token.txt
 realNames.txt
-log.out
-log.err
+*.out
+*.err
