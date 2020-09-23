@@ -36,7 +36,7 @@ class Identification(commands.Cog):
 
     def selfIdentify(self,_id, name):
         'Adds the name to the list'
-        
+
         with open("Resource/realNames.txt","a+") as f:
             f.write(f'{_id} = {name}\n')
 
@@ -55,10 +55,12 @@ class Identification(commands.Cog):
                     return name
         return "not found\n"
 
+
     @commands.command(aliases = ['id'])
     async def identify(self,ctx):
-        ' Aliases = id; You can find any users identity from here if they have added it'
+        '!identify @handle'
         ans = ''
+        
         for person in ctx.message.mentions:
             ans += f'{person} is {self.findName(person)}'
         await ctx.send(ans)

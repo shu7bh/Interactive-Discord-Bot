@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from discord.utils import get
 import os
 
 class Admin(commands.Cog):
@@ -26,6 +27,16 @@ class Admin(commands.Cog):
         else:
             return 'No such Cog exists you noob! Being an admin lol'
 
+    async def cog_check(self, ctx):
+        'Check if user has admin role'
+
+        #admin = get(ctx.guild.roles, name="Admin")
+        #return admin in ctx.author.roles
+
+        return ctx.author.guild_permissions.manage_messages \
+            or ctx.author.guild_permissions.manage_guild \
+            or ctx.author.guild_permissions.manage_channels \
+            or ctx.author.guild_permissions.administrator
 
     @commands.command(aliases = ['l'])
     async def load(self, ctx, extension):

@@ -7,8 +7,10 @@ bot = commands.Bot(command_prefix = '.')
 
 @bot.event
 async def on_command_error(ctx,error):
-    if isinstance(error,commands.MissingRequiredArgument):
-        await ctx.send("Can't even give a command properly. Such a noob!")
+    'This is to catch all possible errors'
+
+
+    await ctx.send(random.choice(open("Resource/errorResponses.txt", "r").readlines()))
 
 @bot.event
 async def on_ready():
