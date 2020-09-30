@@ -4,9 +4,9 @@ import os
 import random
 
 class Entertainment(commands.Cog):
-    '''The Entertainment section is where you can pass your time fruitlessly with
+    """The Entertainment section is where you can pass your time fruitlessly with
         the various options available to you!!
-    '''
+    """
 
     def __init__(self, bot):
         self.bot = bot

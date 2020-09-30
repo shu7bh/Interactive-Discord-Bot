@@ -3,14 +3,18 @@ from discord.ext import commands
 import random
 import os
 
-bot = commands.Bot(command_prefix = '.') 
+bot = commands.Bot(command_prefix = '.')
+
+functionErrorsHandled = ['load', 'unload', 'reload', 'clear']
 
 @bot.event
 async def on_command_error(ctx,error):
     'This is to catch all possible errors'
-
-
-    await ctx.send(random.choice(open("Resource/errorResponses.txt", "r").readlines()))
+    
+    if isinstance(error, commands.CommandNotFound):
+        await ctx.send("words i guess")
+    elif ctx.command.name not in functionErrorsHandled:
+        await ctx.send(random.choice(open("Resource/errorResponses.txt", "r").readlines()))
 
 @bot.event
 async def on_ready():
