@@ -12,7 +12,7 @@ async def on_command_error(ctx,error):
     'This is to catch all possible errors'
     
     if isinstance(error, commands.CommandNotFound):
-        await ctx.send("words i guess")
+        pass
     elif ctx.command.name not in functionErrorsHandled:
         await ctx.send(random.choice(open("Resource/errorResponses.txt", "r").readlines()))
 

@@ -45,9 +45,6 @@ class Admin(commands.Cog):
     async def cog_check(self, ctx):
         'Check if user has admin role'
 
-        #admin = get(ctx.guild.roles, name="Admin")
-        #return admin in ctx.author.roles
-
         return ctx.author.guild_permissions.manage_messages \
             or ctx.author.guild_permissions.manage_guild \
             or ctx.author.guild_permissions.manage_channels \
