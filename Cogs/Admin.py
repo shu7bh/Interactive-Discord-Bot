@@ -104,7 +104,7 @@ class Admin(commands.Cog):
     async def clear(self,ctx, amt):
         'Aliases = remove; To remove some lines from the history'
 
-        await ctx.channel.purge(limit=amt+1)
+        await ctx.channel.purge(limit=int(amt)+1)
 
     @unload.error
     async def unload_error(self, ctx, error):
