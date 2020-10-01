@@ -2,5 +2,5 @@ token.txt
 realNames.txt
 *.out
 *.err
-__pycache__/
+**/__pycache__/
 Log/
