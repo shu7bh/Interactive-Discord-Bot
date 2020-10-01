@@ -101,10 +101,14 @@ class Admin(commands.Cog):
 
 
     @commands.command(aliases = ['remove'])
+    @commands.bot_has_permissions(manage_messages = True)
     async def clear(self,ctx, amt):
         'Aliases = remove; To remove some lines from the history'
 
-        await ctx.channel.purge(limit=int(amt)+1)
+        if amt.isdigit():
+            await ctx.channel.purge(limit=int(amt)+1)
+        else:
+            await ctx.send('Enter a number')
 
     @unload.error
     async def unload_error(self, ctx, error):
@@ -122,18 +126,11 @@ class Admin(commands.Cog):
             await ctx.send('Give the desired extension')
             
     @clear.error
-    @commands.has_guild_permissions(manage_messages = True)
     async def clear_error(self, ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
-            await('Give an integer value to delete')
-
-    @clear.error
-    @commands.has_guild_permissions(manage_messages = False)
-    async def _clear_error(self, ctx, error):
-        if isinstance(error, commands.MissingRequiredArgument):
-            await('Give an integer value to delete')
-        else:
-            await('The bot does not have manage message permission')
+            await ctx.send('Please specify the number of messages you want to clear')
+        elif isinstance(error, commands.BotMissingPermissions):
+            await ctx.send(f"The Bot needs: {' '.join(error.missing_perms)}")
 
 def setup(bot):
     bot.add_cog(Admin(bot))
