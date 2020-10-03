@@ -1,6 +1,30 @@
 # Discord-Bot
 A mini-project to create a discord bot with multiple functionalities
 
+## Features ##
+Currently it has 3 different types of features:
+* Entertainment
+* Identification
+* Admin
+
+### Entertainment ###
+There are two features currently:
+* ping: Getting to know the latency of the bot in responding to your message
+* 8ball: Employed wizardry to correctly answer all the dumb questions asked
+
+### Identification ###
+For a large server, in which people have vague usernames, this functionality comes in handy.
+People can identify themselves using this bot, and any person can find out using their tag what their name is... no more awkward questions every 2 months!
+
+### Admin ###
+Some special permissions are needed for this function to work.
+The only feature currently here is to clear messages in a bulk.
+The bot needs manage_messages permission to be able to run this.
+
+### Future Features ###
+Any and every feature can be added over here. This bot is a ideally supposed to be one bot fit alls. Just started working on this in my free time for learning purposes.
+
+
 ## Pre Requisites ## 
 You need the following modules to be able to run this file
 * discord.py
