@@ -3,6 +3,7 @@ from discord.ext import commands
 import os
 import random
 
+
 class Entertainment(commands.Cog):
     """The Entertainment section is where you can pass your time fruitlessly with
         the various options available to you!!
@@ -17,7 +18,7 @@ class Entertainment(commands.Cog):
 
         await context.send(f'{round(self.bot.latency * 1000)}ms')
 
-    @commands.command(aliases = ['8ball'])
+    @commands.command(aliases=['8ball'])
     async def _8ball(self, context, *, q):
         ' Aliases = 8ball; A fun section where the bot predicts answers'
 
