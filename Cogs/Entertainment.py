@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import os
 import random
-
+import requests
 
 class Entertainment(commands.Cog):
     """The Entertainment section is where you can pass your time fruitlessly with
@@ -25,6 +25,14 @@ class Entertainment(commands.Cog):
         res = list(open('Resource/8ballResponses.txt', 'r').readlines())
         await context.send(f'Question: {q}\nAnswer: {random.choice(res)}')
 
+    @commands.command(aliases=['j','telljoke'])
+    async def joke(self,ctx):
+        ' Tells a random joke '
+        responses = requests.get("https://official-joke-api.appspot.com/random_joke")
+
+        jokeSetup = responses.json()['setup']
+        jokePunchline = responses.json()['punchline']
+        await ctx.send(f'{jokeSetup}\n{jokePunchline}')
 
 def setup(bot):
     bot.add_cog(Entertainment(bot))
