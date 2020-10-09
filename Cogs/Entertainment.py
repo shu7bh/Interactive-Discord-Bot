@@ -28,10 +28,10 @@ class Entertainment(commands.Cog):
     @commands.command(aliases=['j','telljoke'])
     async def joke(self,ctx):
         ' Tells a random joke '
-        responses = requests.get("https://official-joke-api.appspot.com/random_joke")
+        responses = requests.get("https://official-joke-api.appspot.com/random_joke").json()
 
-        jokeSetup = responses.json()['setup']
-        jokePunchline = responses.json()['punchline']
+        jokeSetup = responses['setup']
+        jokePunchline = responses['punchline']
         await ctx.send(f'{jokeSetup}\n{jokePunchline}')
 
 def setup(bot):
