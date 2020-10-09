@@ -34,6 +34,7 @@ class Identification(commands.Cog):
                     return True
         return False
 
+
     def selfIdentify(self,_id, name):
         'Adds the name to the list'
 
@@ -44,6 +45,7 @@ class Identification(commands.Cog):
     def reidentify(self,_id,name):
         self.removeName(_id)
         self.selfIdentify(_id,name)
+
 
     def findName(self,person):
         'Gets the identified name of the mentioned user'
@@ -57,7 +59,7 @@ class Identification(commands.Cog):
 
 
     @commands.command(aliases = ['id'])
-    async def identify(self,ctx):
+    async def identify(self, ctx):
         '!identify @handle'
         ans = ''
         
@@ -78,11 +80,13 @@ class Identification(commands.Cog):
         self.selfIdentify(author.id ,name)
         await ctx.send(f'{author}, you are identified as {name}!')
 
+
     @commands.command(aliases = ['removeid', 'rid'])
     async def removeidentity(self,ctx):
         ' Aliases = removeid, rid; To remove your current identity'
         _id = ctx.author.id
         await ctx.send(f'{ctx.author} {self.removeName(_id)}')
+
 
 def setup(bot):
     bot.add_cog(Identification(bot))
