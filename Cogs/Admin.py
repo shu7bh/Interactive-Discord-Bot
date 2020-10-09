@@ -1,16 +1,9 @@
 import discord
 from discord.ext import commands
 from discord.utils import get
+from Resource.aliases import *
 import os
 
-aliases = {
-    'A': 'Admin',
-    'admin': 'Admin',
-    'E': 'Entertainment',
-    'entertainment': 'Entertainiment',
-    'I': 'Identification',
-    'identification': 'Identification'
-}
 
 class Admin(commands.Cog):
 
