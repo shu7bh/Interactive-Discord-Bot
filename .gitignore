@@ -1,6 +1,14 @@
+# Make your own token.txt and put your discord token as the only text
 token.txt
+# The names of people who identify themselves using your bot.
 realNames.txt
+
+# Log files
+Log/
 *.out
 *.err
+
 **/__pycache__/
-Log/
+
+# Virtual env for the bot
+env/
