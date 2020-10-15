@@ -12,3 +12,6 @@ Log/
 
 # Virtual env for the bot
 env/
+
+# Vscode Ignores
+.vscode/

@@ -25,7 +25,7 @@ class Entertainment(commands.Cog):
         res = list(open('Resource/8ballResponses.txt', 'r').readlines())
         await context.send(f'Question: {q}\nAnswer: {random.choice(res)}')
 
-    @commands.command(aliases=['j','telljoke'])
+    @commands.command(aliases=['telljoke'])
     async def joke(self,ctx):
         ' Tells a random joke '
         responses = requests.get("https://official-joke-api.appspot.com/random_joke").json()

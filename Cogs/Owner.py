@@ -39,7 +39,7 @@ class Owner(commands.Cog):
             return 'No such Cog exists'
 
 
-    @commands.command(aliases = ['l'])
+    @commands.command(aliases = ['L'])
     async def load(self, ctx, extension):
         'To load Cogs'  
 
@@ -65,14 +65,14 @@ class Owner(commands.Cog):
             return 'No such Cog exists'
         
 
-    @commands.command(aliases = ['ul'])
+    @commands.command(aliases = ['UL'])
     async def unload(self,ctx,extension):
         'To unload Cogs'
 
         await ctx.send(self._unload(extension))
 
 
-    @commands.command(aliases = ['rl'])
+    @commands.command(aliases = ['RL'])
     async def reload(self,ctx,extension):
         'To reload Cogs'
 
