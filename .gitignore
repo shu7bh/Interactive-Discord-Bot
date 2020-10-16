@@ -15,3 +15,6 @@ env/
 
 # Vscode Ignores
 .vscode/
+
+# Ignoring .webm files
+*.webm
