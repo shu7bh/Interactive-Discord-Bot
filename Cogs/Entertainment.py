@@ -33,6 +33,13 @@ class Entertainment(commands.Cog):
         jokeSetup = responses['setup']
         jokePunchline = responses['punchline']
         await ctx.send(f'{jokeSetup}\n{jokePunchline}')
+        
+    @commands.command(aliases=['rand'])
+    async def random(self, context, *, q):
+        ' Generates a random number between the two given numbers '
+        parsed_str = q.split(" ")
+        ran_num = random.randint(int(parsed_str[0]), int(parsed_str[2])
+        await ctx.send(f'You have picked: {str(ran_num)}')
 
 def setup(bot):
     bot.add_cog(Entertainment(bot))
