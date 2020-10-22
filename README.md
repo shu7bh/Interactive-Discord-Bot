@@ -12,6 +12,7 @@ There are two features currently:
 * ping: Getting to know the latency of the bot in responding to your message
 * 8ball: Employed wizardry to correctly answer all the dumb questions asked
 * joke: Tells a random text joke using an API.
+* random: Returns a random number between 2 integers
 
 ### Identification ###
 For a large server, in which people have vague usernames, this functionality comes in handy.
