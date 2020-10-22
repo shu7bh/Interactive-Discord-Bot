@@ -11,6 +11,8 @@ Currently it has 3 different types of features:
 There are two features currently:
 * ping: Getting to know the latency of the bot in responding to your message
 * 8ball: Employed wizardry to correctly answer all the dumb questions asked
+* joke: Tells a random text joke using an API.
+* random: Returns a random number between 2 integers
 
 ### Identification ###
 For a large server, in which people have vague usernames, this functionality comes in handy.
@@ -18,6 +20,11 @@ People can identify themselves using this bot, and any person can find out using
 
 ### Admin ###
 Some special permissions are needed for this function to work.
+* clear: Deletes the messages in a particular channel. There is one parameter, the number of messages to be deleted
+* ban: Bans a user from the server. The parameter to be given is the tag of the user.
+* unban: Unbans a user from the server. The name and discriminator id must be specified as the parameter (username#1234).
+* kick: Kicks a user from the server. The parameter to be given is the tag of the user.
+
 The only feature currently here is to clear messages in a bulk.
 The bot needs manage_messages permission to be able to run this.
 
@@ -26,10 +33,12 @@ Any and every feature can be added over here. This bot is a ideally supposed to 
 
 
 ## Pre Requisites ## 
-You need the following modules to be able to run this file
-* discord.py
-* os
-* random
+Create a python virtual env in the main directory using
+```
+$ python3 -m venv env && cd env
+$ source bin/activate
+$ pip install -r ../requirements.txt
+```
 
 To run this bot in your server, do the following:
 * Create a file named token.txt in the same directory as that of the bot.py
@@ -50,7 +59,7 @@ $python3 bot.py &
 
 To keep this file running even after you close your terminal, do the following:
 ```
-$nohup python3 bot.py > log.out 2> log.err &
+$nohup python3 bot.py > Log/log.out 2> Log/log.err &
 ```
 
 To kill this program, you have to first identify the pid of your program.
