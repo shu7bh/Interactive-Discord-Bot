@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 import os
-import random
+from random import choice, randint
 import requests
 
 class Entertainment(commands.Cog):
@@ -23,7 +23,7 @@ class Entertainment(commands.Cog):
         ' Aliases = 8ball; A fun section where the bot predicts answers'
 
         res = list(open('Resource/8ballResponses.txt', 'r').readlines())
-        await context.send(f'Question: {q}\nAnswer: {random.choice(res)}')
+        await context.send(f'Question: {q}\nAnswer: {choice(res)}')
 
     @commands.command(aliases=['telljoke'])
     async def joke(self,ctx):
@@ -35,11 +35,10 @@ class Entertainment(commands.Cog):
         await ctx.send(f'{jokeSetup}\n{jokePunchline}')
         
     @commands.command(aliases=['rand'])
-    async def random(self, context, *, q):
+    async def random(self, ctx, a, b):
         ' Generates a random number between the two given numbers '
-        parsed_str = q.split(" ")
-        ran_num = random.randint(int(parsed_str[0]), int(parsed_str[2])
-        await ctx.send(f'You have picked: {str(ran_num)}')
+        
+        await ctx.send(f'You have picked: {randint(int(a), int(b)}')
 
 def setup(bot):
     bot.add_cog(Entertainment(bot))
