@@ -38,7 +38,7 @@ class Entertainment(commands.Cog):
     async def random(self, ctx, a, b):
         ' Generates a random number between the two given numbers '
         
-        await ctx.send(f'You have picked: {randint(int(a), int(b)}')
+        await ctx.send(f'You have picked: {randint(int(a), int(b))}')
 
 def setup(bot):
     bot.add_cog(Entertainment(bot))
