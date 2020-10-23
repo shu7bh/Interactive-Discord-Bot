@@ -40,5 +40,11 @@ class Entertainment(commands.Cog):
         
         await ctx.send(f'You have picked: {randint(int(a), int(b))}')
 
+    @commands.command()
+    async def roll(self,ctx):
+        ' Rolls a die and give a random number between 1 and 6 '
+        await ctx.send(f'You have rolled the die...')
+        await ctx.send(f'You rolled a {randint(1,6)}!')
+        
 def setup(bot):
     bot.add_cog(Entertainment(bot))
