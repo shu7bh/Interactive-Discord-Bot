@@ -8,11 +8,12 @@ Currently it has 3 different types of features:
 * Admin
 
 ### Entertainment ###
-There are two features currently:
+There are five features currently:
 * ping: Getting to know the latency of the bot in responding to your message
 * 8ball: Employed wizardry to correctly answer all the dumb questions asked
 * joke: Tells a random text joke using an API.
 * random: Returns a random number between 2 integers
+* roll: Rolls a die and returns a number from 1 to 6
 
 ### Identification ###
 For a large server, in which people have vague usernames, this functionality comes in handy.
